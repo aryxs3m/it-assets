@@ -37,6 +37,10 @@
                                     <input type="text" class="form-control" id="name" name="name" value="{{ $model->name ?? '' }}">
                                 </div>
                                 <div class="form-group">
+                                    <label for="ports">Portok száma</label>
+                                    <input type="number" class="form-control" id="ports" name="ports" value="{{ $model->ports ?? '' }}">
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputPassword1">Leírás</label>
                                     <textarea name="description" id="description" class="form-control">{{ $model->description ?? '' }}</textarea>
                                 </div>

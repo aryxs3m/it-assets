@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class DeviceType extends Model
 {
     protected $fillable = [
-        'name', 'description', 'icon'
+        'name', 'description', 'icon', 'ports'
     ];
 
     protected $casts = [
         'name' => 'string',
         'description' => 'string',
-        'icon' => 'string'
+        'icon' => 'string',
+        'ports' => 'integer'
     ];
 
     public function devices()

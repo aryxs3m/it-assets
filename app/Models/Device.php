@@ -16,6 +16,7 @@ class Device extends Model
         'ip' => 'string',
         'type_id' => 'integer',
         'position_id' => 'integer',
+        'product_id' => 'integer',
     ];
 
     public function type()
@@ -26,5 +27,10 @@ class Device extends Model
     public function position()
     {
         return $this->hasOne('App\Models\Position', 'id', 'position_id');
+    }
+
+    public function product()
+    {
+        return $this->hasOne('App\Models\Product', 'id', 'product_id');
     }
 }

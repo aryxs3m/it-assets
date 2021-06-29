@@ -27,7 +27,9 @@
                 <tbody>
                     @foreach($types as $type)
                         <tr>
-                            <td>{{ $type->name }}</td>
+                            <td>
+                                <a href="/devices/details/{{ $type->id }}">{{ $type->name }}</a>
+                            </td>
                             <td>{{ $type->ip }}</td>
                             <td>{{ $type->type->name }}</td>
                             <td>{{ $type->position->name }}</td>

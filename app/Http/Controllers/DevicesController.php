@@ -16,6 +16,11 @@ class DevicesController extends Controller
         return view("{$this->viewRoot}.index", compact('types'));
     }
 
+    public function details(Device $device)
+    {
+        return view("{$this->viewRoot}.details", compact('device'));
+    }
+
     public function edit(Device $model)
     {
         return view("{$this->viewRoot}.edit", compact('model'));

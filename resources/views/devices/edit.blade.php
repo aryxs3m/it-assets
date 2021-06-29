@@ -32,9 +32,13 @@
 
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="name">Név</label>
+                                    <label for="name">Hosztnév</label>
                                     <input type="text" class="form-control" id="name" name="name" value="{{ $model->name ?? '' }}">
                                 </div>
+                                {{--<div class="form-group">
+                                    <label for="product_id">Eszköz modell</label>
+                                    <select id="product_id" name="product_id" class="form-control"></select>
+                                </div>--}}
                                 <div class="form-group">
                                     <label for="ip">IP cím</label>
                                     <input type="text" class="form-control" id="ip" name="ip" value="{{ $model->ip ?? '' }}">
@@ -75,3 +79,18 @@
     </section>
 
 @endsection
+
+@push('scripts')
+    {{--<script>
+        $(document).ready(function(){
+            $('#product_id').select2({
+                ajax: {
+                    url: '/products/select2',
+                    dataType: 'json'
+                    // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+                },
+                tags: true
+            });
+        })
+    </script>--}}
+@endpush

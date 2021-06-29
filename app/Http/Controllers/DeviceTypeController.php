@@ -26,7 +26,8 @@ class DeviceTypeController extends Controller
         $validated = $request->validate([
             'id' => 'integer|nullable',
             'name' => 'string|required',
-            'description' => 'string|nullable'
+            'description' => 'string|nullable',
+            'ports' => 'integer|nullable'
         ]);
 
         if($request->exists('id'))

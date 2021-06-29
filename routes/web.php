@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function(){
         Route::get('/', [\App\Http\Controllers\DevicesController::class, 'index']);
         Route::view('/new', 'devices.edit');
         Route::post('/save', [\App\Http\Controllers\DevicesController::class, 'save']);
+        Route::get('/details/{device}', [\App\Http\Controllers\DevicesController::class, 'details']);
         Route::get('/edit/{model}', [\App\Http\Controllers\DevicesController::class, 'edit']);
         Route::get('/delete/{model}', [\App\Http\Controllers\DevicesController::class, 'deleteConfirm']);
         Route::post('/delete/{model}', [\App\Http\Controllers\DevicesController::class, 'delete']);
@@ -43,6 +44,16 @@ Route::middleware('auth')->group(function(){
     });
 
     Route::prefix('/positions')->group(function(){
+        Route::get('/', [\App\Http\Controllers\PositionsController::class, 'index']);
+        Route::view('/new', 'positions.edit');
+        Route::post('/save', [\App\Http\Controllers\PositionsController::class, 'save']);
+        Route::get('/edit/{model}', [\App\Http\Controllers\PositionsController::class, 'edit']);
+        Route::get('/delete/{model}', [\App\Http\Controllers\PositionsController::class, 'deleteConfirm']);
+        Route::post('/delete/{model}', [\App\Http\Controllers\PositionsController::class, 'delete']);
+    });
+
+    Route::prefix('/products')->group(function(){
+        Route::get('/select2', [\App\Http\Controllers\ProductController::class, 'select2']);
         Route::get('/', [\App\Http\Controllers\PositionsController::class, 'index']);
         Route::view('/new', 'positions.edit');
         Route::post('/save', [\App\Http\Controllers\PositionsController::class, 'save']);
